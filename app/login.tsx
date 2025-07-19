@@ -11,8 +11,10 @@ import { AuthContext } from "@/utils/authContext";
 import { AppText } from "@/components/AppText";
 import { Button } from "@/components/Button";
 import { Link, useRouter } from "expo-router";
-
-type LanguageOption = "English" | "Spanish";
+import {
+  LanguageSelector,
+  LanguageOption,
+} from "@/components/LanguageSelector";
 
 export default function LoginScreen() {
   const authContext = useContext(AuthContext);
@@ -29,31 +31,7 @@ export default function LoginScreen() {
   return (
     <View className="flex-1 bg-white px-6 pt-40">
       {/* Language toggle (top-right) */}
-      <View className="absolute top-5 right-5 items-end">
-        <TouchableOpacity
-          className="bg-green-800 px-3 py-2 rounded"
-          onPress={() => setDropdownVisible(!dropdownVisible)}
-        >
-          <View className="flex-row items-center">
-            <Text className="text-sm text-white mr-1">🌐</Text>
-            <Text className="text-sm text-white">{language} ⌄</Text>
-          </View>
-        </TouchableOpacity>
-
-        {dropdownVisible && (
-          <View className="mt-2 bg-white rounded shadow-lg w-28">
-            {["English", "Spanish"].map((lang) => (
-              <Pressable
-                key={lang}
-                className="px-3 py-2 hover:bg-gray-200"
-                onPress={() => handleLanguageChange(lang as LanguageOption)}
-              >
-                <Text className="text-black text-base">{lang}</Text>
-              </Pressable>
-            ))}
-          </View>
-        )}
-      </View>
+      <LanguageSelector language={language} onChange={setLanguage} />
 
       {/* Logo */}
       <View className="items-center mb-6">
