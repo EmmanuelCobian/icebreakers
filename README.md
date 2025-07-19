@@ -130,6 +130,7 @@ Before running any code, your computer must have the following installed
    ```sh
    npx expo run andriod
    ```
+4. After completing the captcha, enter the code `123456` to finalize the login process
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
