@@ -4,6 +4,7 @@ import { Button, TextInput } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import { usePathname, useRouter } from 'expo-router';
 import SendSMS from 'react-native-sms'
+import '../global.css'
 
 globalThis.RNFB_SILENCE_MODULAR_DEPRECATION_WARNINGS = true; // suppress firebase migration warnings
 
@@ -73,7 +74,7 @@ const index = () => {
             onPress={() => signInWithPhoneNumber('+1 111-222-3333')}
             style={{ borderColor: 'red', borderWidth: 1, marginTop: 100}}
           >
-            <Text>Sign In</Text>
+            <Text className='text-xl font-bold text-blue-500'>Sign In</Text>
           </TouchableOpacity>
         </SafeAreaView>
       );
