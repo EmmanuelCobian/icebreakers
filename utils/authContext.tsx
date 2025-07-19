@@ -63,6 +63,10 @@ export function AuthProvider({ children }: PropsWithChildren) {
 
   async function confirmCode(code: string) {
     try {
+      if (!confirm) {
+        console.log("No confirmation result available. Please try signing in again.");
+        return;
+      }
       await confirm.confirm(code);
       setIsLoggedIn(true);
       await storeAuthState({ isLoggedIn: true });
@@ -71,7 +75,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
       console.log("Invalid code.", error);
     }
   }
-
+  
   const storeAuthState = async (newState: { isLoggedIn: boolean }) => {
     try {
       const jsonValue = JSON.stringify(newState);
@@ -80,10 +84,17 @@ export function AuthProvider({ children }: PropsWithChildren) {
       console.log("Error saving", error);
     }
   };
-
-  const logIn = () => {
-    signInWithPhoneNumber("+1 111-222-3333");
-    router.push("/verify-code");
+  
+  const logIn = async () => {
+    try {
+      setIsLoggedIn(true);
+      await storeAuthState({ isLoggedIn: true });
+      router.replace("/welcome");
+      // await signInWithPhoneNumber("+1 555-123-4567");
+      // router.push("/verify-code");
+    } catch (error) {
+      console.log("Error signing in with phone number:", error);
+    }
   };
 
   const logOut = () => {
