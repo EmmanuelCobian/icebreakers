@@ -4,7 +4,7 @@
     "slug": "icebreakers",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/router-icon.png",
     "scheme": "icebreakers",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,

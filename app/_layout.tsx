@@ -2,36 +2,27 @@ import { Stack } from "expo-router";
 import "../global.css";
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-
-export const unstable_settings = {
-  initialRouteName: "(tabs)", // anchor
-};
+import { AuthProvider } from "@/utils/authContext";
 
 export default function RootLayout() {
   return (
-    <React.Fragment>
+    <AuthProvider>
       <StatusBar style="auto" />
       <Stack>
         <Stack.Screen
-          name="(tabs)"
+          name="(protected)"
           options={{
             headerShown: false,
+            animation: "none",
           }}
         />
         <Stack.Screen
-          name="modal"
+          name="login"
           options={{
-            presentation: "modal",
-          }}
-        />
-        <Stack.Screen
-          name="modal-with-stack"
-          options={{
-            presentation: "modal",
-            headerShown: false,
+            animation: "none",
           }}
         />
       </Stack>
-    </React.Fragment>
+    </AuthProvider>
   );
 }
