@@ -66,7 +66,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
       await confirm.confirm(code);
       setIsLoggedIn(true);
       await storeAuthState({ isLoggedIn: true });
-      router.replace("/");
+      router.replace("/welcome");
     } catch (error) {
       console.log("Invalid code.", error);
     }
