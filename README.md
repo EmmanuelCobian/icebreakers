@@ -19,11 +19,11 @@ Key features include:
 - Google Maps API  
 - Tailwind CSS  
 
-## 🚀 Getting Started
+## Getting Started
 
 To get a local copy up and running:
 
-### 📦 Prerequisites
+### Prerequisites
 
 Ensure the following tools are installed:
 
@@ -32,7 +32,7 @@ Ensure the following tools are installed:
 - Git  
 - npm or yarn  
 
-### 🛠 Installation
+### Installation
 
 Clone the repo:
 
@@ -57,7 +57,7 @@ npx expo run:android
 
 After completing the captcha, enter the code \`123456\` to finalize the login process.
 
-## 📱 Usage
+## Usage
 
 - Tap the **Panic Button** to notify your emergency contacts and local rapid response teams.  
 - Display a **Red Card** with multilingual legal support information.  
@@ -66,7 +66,7 @@ After completing the captcha, enter the code \`123456\` to finalize the login pr
 
 *For more examples, refer to the [Documentation](https://example.com)*
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [ ] Voice command activation  
 - [ ] Offline Red Card functionality  
@@ -74,7 +74,7 @@ After completing the captcha, enter the code \`123456\` to finalize the login pr
 - [ ] Community resource map with verified reviews  
 - [ ] Dark mode & accessibility enhancements  
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions make the open source world go round. Feel free to fork this repo and propose enhancements.
 
@@ -84,20 +84,20 @@ Contributions make the open source world go round. Feel free to fork this repo a
 4. Push to the branch (`git push origin feature/AmazingFeature`)  
 5. Open a Pull Request  
 
-## 🪪 License
+##  License
 
 Distributed under the Unlicense. See \`LICENSE.txt\` for more details.
 
-## 📫 Contact
+## Team
 
-Emmanuel Cobain Durate -
-Haibian -
-Victor Hernandez
-Alejandro Patino - 
-Auner Barrios Vasquez -   
+<p>Emmanuel Cobain Durate - (https://github.com/EmmanuelCobian)</p>
+<p>Haibian Yu - (https://github.com/haibn) </p>
+<p>Victor Hernandez - (https://github.com/hernandezv0110)</p>
+<p>Alejandro Patino - </p>
+<p>Auner Barrios Vasquez -(https://github.com/abarriosvasquez) </p>
 Project Link: [https://github.com/EmmanuelCobian/icebreakers](https://github.com/EmmanuelCobian/icebreakers)
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [React Native SMS](https://www.npmjs.com/package/react-native-sms)  
 - Google Maps API  
@@ -105,4 +105,3 @@ Project Link: [https://github.com/EmmanuelCobian/icebreakers](https://github.com
 - Expo  
 - Tailwind CSS  
 - Firebase Auth  
-- GitHub README Template by [othneildrew](https://github.com/othneildrew/Best-README-Template)
