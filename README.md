@@ -1,15 +1,16 @@
-## About The Project
+## About Ice-Breakers
 
-**Challenge 2: Innovating our communities**
+**Track Challenge 2: Innovating our communities** \
+\
+**Description: Ice-Breakers is a multilingual emergency support app designed to protect and empower immigrant communities. Ice-Breakers connects you to trusted support instantly, with just one tap of a button**
 
 Many technologies fail to prioritize or protect the unique needs of immigrants and underrepresented communities. Ice-Breakers seeks to bridge this gap by offering a tailored emergency support system that is multilingual, intuitive, and built with love.
 
 Key features include:
 
-- A panic button that notifies relatives and local rapid response networks  
-- Automatic translation of emergency messages  
-- A multilingual Red Card feature for use in interactions with authorities  
-- Contact information for immigration support nearby using user’s zip code  
+- A panic button that notifies relatives and local rapid response networks   
+- A multilingual Red Card feature for use in interactions when having an encounter with ICE  
+- Contact information for immigration support nearby using the user’s zip code  
 
 ### Built With
 
@@ -36,41 +37,40 @@ Ensure the following tools are installed:
 
 Clone the repo:
 
-\`\`\`bash
+```bash
 git clone https://github.com/EmmanuelCobian/icebreakers.git
 cd icebreakers
-\`\`\`
+```
+
 
 Install dependencies:
 
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 Start iOS or Android build (Expo):
 
-\`\`\`bash
+```bash
 npx expo run:ios
 # or
 npx expo run:android
-\`\`\`
+```
 
-After completing the captcha, enter the code \`123456\` to finalize the login process.
+After completing the captcha, enter the code `123456` to finalize the login process.
 
 ## Usage
 
 - Tap the **Panic Button** to notify your emergency contacts and local rapid response teams.  
-- Display a **Red Card** with multilingual legal support information.  
+- Display a **Red Card** with multilingual legal support information and instructions.  
 - Automatically **translate content** using the embedded Google Translate dropdown.  
 - Look up nearby immigration lawyers via the Google Maps API and scraped legal directories.  
 
 *For more examples, refer to the [Documentation](https://example.com)*
 
 ## Roadmap
-
-- [ ] Voice command activation  
-- [ ] Offline Red Card functionality  
-- [ ] Integration with WhatsApp and Signal  
+  
+- [ ] Offline Red Card functionality    
 - [ ] Community resource map with verified reviews  
 - [ ] Dark mode & accessibility enhancements  
 
@@ -79,9 +79,9 @@ After completing the captcha, enter the code \`123456\` to finalize the login pr
 Contributions make the open source world go round. Feel free to fork this repo and propose enhancements.
 
 1. Fork the repo  
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)  
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)  
-4. Push to the branch (`git push origin feature/AmazingFeature`)  
+2. Create your feature branch (`git checkout -b feature/NewFeature`)  
+3. Commit your changes (`git commit -m 'Add some NewFeature'`)  
+4. Push to the branch (`git push origin feature/NewFeature`)  
 5. Open a Pull Request  
 
 ##  License
