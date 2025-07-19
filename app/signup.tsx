@@ -14,10 +14,12 @@ import { Link, useRouter } from "expo-router";
 
 type LanguageOption = "English" | "Spanish";
 
-export default function LoginScreen() {
-  const authContext = useContext(AuthContext);
+export default function SignupScreen() {
   const router = useRouter();
+  const authContext = useContext(AuthContext);
+
   const [phone, setPhone] = useState("");
+  const [name, setName] = useState("");
   const [language, setLanguage] = useState<LanguageOption>("English");
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
@@ -66,8 +68,17 @@ export default function LoginScreen() {
 
       {/* Title */}
       <AppText className="text-center text-lg font-semibold mb-4">
-        Sign up for an Account:
+        Create an Account:
       </AppText>
+
+      {/* Phone number input */}
+      <TextInput
+        placeholder="Name"
+        keyboardType="phone-pad"
+        value={name}
+        onChangeText={setName}
+        className="bg-white border border-gray-300 rounded-lg px-4 py-3 mb-3 shadow-sm"
+      />
 
       {/* Phone number input */}
       <TextInput
@@ -80,18 +91,10 @@ export default function LoginScreen() {
 
       {/* Login button */}
       <Button
-        title="Sign in!"
+        title="Sign up!"
         onPress={authContext.logIn}
         className="bg-green-800 rounded-lg py-3 items-center mt-5"
       />
-
-      {/* Sign up link */}
-      <View className="mt-5 flex-row justify-center">
-        <Text className="text-black">Don’t have an account? </Text>
-        <Pressable onPress={() => router.replace("/signup")}>
-          <Text className="text-red-600 font-semibold">Sign up</Text>
-        </Pressable>
-      </View>
     </View>
   );
 }
