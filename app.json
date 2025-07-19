@@ -4,12 +4,12 @@
     "slug": "icebreakers",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/router-icon.png",
+    "icon": "./assets/images/ice-breakers-logo.png",
     "scheme": "icebreakers",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/images/splash-icon.png",
+      "image": "./assets/images/ice-breakers-logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -20,7 +20,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/ice-breakers-logo.png",
         "backgroundColor": "#ffffff"
       },
       "googleServicesFile": "./google-services.json",
