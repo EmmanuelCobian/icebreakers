@@ -101,7 +101,6 @@ Follow these steps to get this project running locally on your computer
 
 Before running any code, your computer must have the following installed
 * Node.js (v14 or newer).
-</br>
   Install from https://nodejs.org or using a version manager like nvm.
 
 * npm (comes with Node.js, but you can update it)
@@ -110,7 +109,6 @@ Before running any code, your computer must have the following installed
   ```
 
 * Git (to clone the repository).
-</br>
   [Download Git](https://git-scm.com/downloads)
 
 ### Installation
