@@ -1,7 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { SplashScreen, useRouter, usePathname } from "expo-router";
 import { createContext, PropsWithChildren, useEffect, useState } from "react";
-import auth from "@react-native-firebase/auth";
+import auth, { FirebaseAuthTypes } from "@react-native-firebase/auth";
 
 SplashScreen.preventAutoHideAsync();
 globalThis.RNFB_SILENCE_MODULAR_DEPRECATION_WARNINGS = true; // suppress firebase migration warnings
@@ -12,6 +12,7 @@ type AuthState = {
   logIn: () => void;
   logOut: () => void;
   confirmCode: (code: string) => void;
+  user: FirebaseAuthTypes.User | null;
 };
 
 const authStorageKey = "auth-key";
@@ -22,6 +23,7 @@ export const AuthContext = createContext<AuthState>({
   logIn: () => {},
   logOut: () => {},
   confirmCode: (code: string) => {},
+  user: null,
 });
 
 export function AuthProvider({ children }: PropsWithChildren) {
@@ -35,10 +37,10 @@ export function AuthProvider({ children }: PropsWithChildren) {
   }, []);
 
   const [initializing, setInitializing] = useState(true);
-  const [user, setUser] = useState();
-  const [confirm, setConfirm] = useState(null);
-
-  function onAuthStateChanged(user) {
+  const [user, setUser] = useState<FirebaseAuthTypes.User | null>(null);
+  const [confirm, setConfirm] = useState<FirebaseAuthTypes.ConfirmationResult | null>(null);
+  
+  function onAuthStateChanged(user: FirebaseAuthTypes.User | null) {
     setUser(user);
     if (initializing) setInitializing(false);
   }
@@ -64,7 +66,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
       await confirm.confirm(code);
       setIsLoggedIn(true);
       await storeAuthState({ isLoggedIn: true });
-      router.replace("/"); // move to home screen
+      router.replace("/");
     } catch (error) {
       console.log("Invalid code.", error);
     }
@@ -123,6 +125,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
         logIn,
         logOut,
         confirmCode,
+        user,
       }}
     >
       {children}
