@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, TextInput } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import { usePathname, useRouter } from 'expo-router';
+import SendSMS from 'react-native-sms'
 
 globalThis.RNFB_SILENCE_MODULAR_DEPRECATION_WARNINGS = true; // suppress firebase migration warnings
 
@@ -18,6 +19,19 @@ const index = () => {
   const [user, setUser] = useState();
   const [confirm, setConfirm] = useState(null);
   const [code, setCode] = useState('');
+
+  function sendSMS() {
+	SendSMS.send({
+		body: 'The default body of the SMS!',
+		recipients: ['6507033432'],
+		successTypes: ['sent', 'queued'],
+		allowAndroidSendWithoutReadPermission: true
+	}, (completed, cancelled, error) => {
+
+		console.log('SMS Callback: completed: ' + completed + ' cancelled: ' + cancelled + 'error: ' + error);
+
+	});
+  }
 
   function onAuthStateChanged(user) {
     setUser(user);
@@ -36,6 +50,7 @@ const index = () => {
   async function signInWithPhoneNumber(phoneNumber: string) {
     console.log('phoneNumber', phoneNumber);
     const confirmation = await auth().signInWithPhoneNumber(phoneNumber);
+    sendSMS();
     console.log('confirmation', confirmation);
     setConfirm(confirmation);
   }
