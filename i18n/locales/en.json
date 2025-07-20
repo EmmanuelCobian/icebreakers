@@ -16,7 +16,8 @@
     "title-p1": "Welcome to",
     "title-p2": "ICE Breakers",
     "subtitle": "Your trusted emergency companion",
-    "description": "With one tap, connect to help, alert loved ones, and protect your rights — wherever you are."
+    "description": "With one tap, connect to help, alert loved ones, and protect your rights — wherever you are.",
+    "skip": "Skip to Login"
   },
   "intro1": {
     "title-p1": "ICE Breakers was built by",
@@ -62,8 +63,8 @@
     "phone": "Phone Number",
     "name": "Name (optional)",
     "relationship": "Relationship (optional)",
-    "add-contact" : "+ Add another contact",
-    "contact" : "Contact",
-    "of" : "of"
+    "add-contact": "+ Add another contact",
+    "contact": "Contact",
+    "of": "of"
   }
 }

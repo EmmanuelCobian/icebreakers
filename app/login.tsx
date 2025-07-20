@@ -63,7 +63,7 @@ export default function LoginScreen() {
       {/* Login button */}
       <Button
         title={t("login.button")}
-        onPress={authContext.logIn}
+        onPress={() => authContext.logIn(phone)}
         className="bg-green-800 rounded-lg py-3 items-center mt-5"
       />
 

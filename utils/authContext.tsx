@@ -63,7 +63,6 @@ export function AuthProvider({ children }: PropsWithChildren) {
   async function signInWithPhoneNumber(phoneNumber: string) {
     console.log("phoneNumber", phoneNumber);
     const confirmation = await auth().signInWithPhoneNumber(phoneNumber);
-    console.log("confirmation", confirmation);
     setConfirm(confirmation);
   }
 
@@ -125,12 +124,16 @@ export function AuthProvider({ children }: PropsWithChildren) {
 
   const newLogIn = async (phone: string) => {
     try {
-      setIsLoggedIn(true);
-      setPhone(phone);
-      await storeAuthState({ isLoggedIn: true, phone: phone });
-      router.replace("/(protected)/location");
-      // await signInWithPhoneNumber("+1 555-123-4567");
-      // router.push("/verify-code");
+      // setIsLoggedIn(true);
+      // setPhone(phone);
+      // await storeAuthState({ isLoggedIn: true, phone: phone });
+      // router.replace("/(protected)/location");
+      // 555-123-4567
+      await signInWithPhoneNumber(phone);
+      router.push({
+        pathname: "/verify-code",
+        params: { phone: phone },
+      });
     } catch (error) {
       console.log("Error signing in with phone number:", error);
     }
@@ -138,20 +141,23 @@ export function AuthProvider({ children }: PropsWithChildren) {
 
   const logIn = async (phone: string) => {
     try {
-      setIsLoggedIn(true);
-      await storeAuthState({ isLoggedIn: true, phone: phone });
-      router.replace("/(protected)/main");
-      // await signInWithPhoneNumber("+1 555-123-4567");
-      // router.push("/verify-code");
+      // setIsLoggedIn(true);
+      // await storeAuthState({ isLoggedIn: true, phone: phone });
+      // router.replace("/(protected)/main");
+      await signInWithPhoneNumber(phone);
+      router.push({
+        pathname: "/verify-code",
+        params: { phone: phone },
+      });
     } catch (error) {
       console.log("Error signing in with phone number:", error);
     }
   };
 
   const logOut = () => {
-    console.log("Hi");
     auth().signOut();
     setIsLoggedIn(false);
+    setPhone("");
     storeAuthState({ isLoggedIn: false, phone: "" });
     router.replace("/welcome");
   };

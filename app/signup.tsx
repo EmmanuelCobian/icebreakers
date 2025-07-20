@@ -23,14 +23,14 @@ export default function SignupScreen() {
   const navigation = useNavigation();
 
   const handleLanguageChange = (lang: LanguageOption) => {
-    setLanguage(lang);
+    // setLanguage(lang);
     i18n.changeLanguage(lang === "English" ? "en" : "es");
     setDropdownVisible(false);
   };
 
   return (
     <View className="flex-1 bg-white px-6 pt-40">
-      <LanguageSelector language={language} onChange={handleLanguageChange} />
+      <LanguageSelector onChange={handleLanguageChange} />
 
       {/* Logo */}
       <View className="items-center mb-6">
