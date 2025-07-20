@@ -60,7 +60,7 @@ export default function introMessage() {
           <Pressable onPress={() => router.push("/(protected)/addContacts")}>
             <Image
               source={require("../../assets/images/arrowRight.png")}
-              className="w-[60px] h-[70px]"
+              className="w-[60px] h-[60px]"
               resizeMode="cover"
             />
           </Pressable>
