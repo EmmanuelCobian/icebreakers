@@ -1,4 +1,4 @@
-package com.icebreakers
+package com.anonymous.icebreakers
 
 import android.app.Application
 import android.content.res.Configuration

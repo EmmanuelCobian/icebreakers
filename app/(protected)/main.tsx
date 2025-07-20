@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableOpacity, Image, Alert } from "react-native";
 import { useRouter } from "expo-router";
 import {
   LanguageSelector,
@@ -9,6 +9,8 @@ import { useState } from "react";
 import i18n from "@/i18n";
 import { useContext } from "react";
 import { AuthContext } from "@/utils/authContext";
+import SendSMS from "react-native-sms";
+import axios from "axios";
 
 export default function EmergencyScreen() {
   const router = useRouter();
@@ -22,6 +24,55 @@ export default function EmergencyScreen() {
     setLanguage(lang);
     i18n.changeLanguage(lang === "English" ? "en" : "es");
     setDropdownVisible(false);
+  };
+
+  const handleSendEmergencySMS = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:3000/api/users/${authContext.phone}`
+      );
+
+      const user = response.data.user;
+
+      if (
+        !user ||
+        !user.emergencyContacts ||
+        user.emergencyContacts.length === 0
+      ) {
+        Alert.alert(
+          "No Contacts",
+          "No emergency contacts found for this user."
+        );
+        return;
+      }
+
+      const userContactNumbers = user.emergencyContacts.map(
+        (c: any) => c.phone
+      );
+
+      SendSMS.send(
+        {
+          body: `🚨 Emergency Alert! ${user.name || "Your contact"} at ${user.phone} needs help immediately! They are in the presence of ICE`,
+          recipients: userContactNumbers,
+          allowAndroidSendWithoutReadPermission: true,
+        },
+        (completed, cancelled, error) => {
+          if (completed) {
+            console.log("SMS sent successfully");
+            Alert.alert("Sent", "Emergency message sent.");
+          } else if (cancelled) {
+            console.log("SMS sending cancelled");
+            Alert.alert("Cancelled", "SMS sending was cancelled.");
+          } else if (error) {
+            console.error("SMS Error:", error);
+            Alert.alert("Error", "There was an error sending the SMS.");
+          }
+        }
+      );
+    } catch (err) {
+      console.error("Failed to fetch user info or send SMS:", err);
+      Alert.alert("Error", "Could not send emergency message.");
+    }
   };
 
   return (
@@ -46,7 +97,7 @@ export default function EmergencyScreen() {
         {/* HELP Button - Taller */}
         <TouchableOpacity
           className="bg-red-600 rounded-3xl px-12 py-28 shadow-lg w-full items-center"
-          //onPress={() => router.push("/help")}
+          onPress={handleSendEmergencySMS}
         >
           <Text className="text-white text-8xl font-extrabold tracking-wide">
             {t("main.help")}
