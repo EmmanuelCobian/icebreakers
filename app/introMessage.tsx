@@ -25,13 +25,13 @@ export default function introMessage() {
 
       {/* Bottom text */}
       <View className="flex-1 items-center justify-center px-6">
-        <Text className="text-center font-bold text-[27px] leading-none">
+        <Text className="text-start font-bold text-[27px] leading-none w-[350px]">
           {t("intro1.title-p1")}
         </Text>
-        <Text className="text-center font-bold text-[61px] leading-none">
+        <Text className="text-start font-bold text-[61px] leading-none w-[355px]">
           {t("intro1.title-p2")}
         </Text>
-        <Text className="text-left font-semibold text-[18.8px] leading-none w-[317px] mt-6">
+        <Text className="text-left font-semibold text-[18.8px] leading-none w-[355px] mt-6">
           {t("intro1.description")}
         </Text>
         {/* <View className="w-full items-end pr-4 mt-2">
