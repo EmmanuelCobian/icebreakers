@@ -40,6 +40,31 @@ export default function RootLayout() {
             animation: "none",
           }}
         />
+        <Stack.Screen
+          name="welcome"
+          options={{
+            animation: "none",
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="introMessage"
+          options={{
+            animation: "none",
+          }}
+        />
+        <Stack.Screen
+          name="introMessage2"
+          options={{
+            animation: "none",
+          }}
+        />
+        <Stack.Screen
+          name="tutorial"
+          options={{
+            animation: "none",
+          }}
+        />
       </Stack>
     </AuthProvider>
   );

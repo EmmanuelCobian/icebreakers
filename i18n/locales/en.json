@@ -43,6 +43,7 @@
   },
   "main": {
     "help": "HELP",
-    "myRights": "My Rights"
+    "myRights": "My Rights",
+    "logout": "Logout"
   }
 }

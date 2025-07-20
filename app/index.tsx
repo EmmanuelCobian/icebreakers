@@ -10,8 +10,8 @@ export default function Index() {
   }
 
   if (isLoggedIn) {
-    return <Redirect href="/(protected)/welcome" />;
+    return <Redirect href="/(protected)/main" />;
   } else {
-    return <Redirect href="/login" />;
+    return <Redirect href="/welcome" />;
   }
 }

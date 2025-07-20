@@ -7,10 +7,13 @@ import {
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import i18n from "@/i18n";
+import { useContext } from "react";
+import { AuthContext } from "@/utils/authContext";
 
 export default function EmergencyScreen() {
   const router = useRouter();
   const { t } = useTranslation();
+  const authContext = useContext(AuthContext);
 
   const [language, setLanguage] = useState<LanguageOption>("English");
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -57,6 +60,16 @@ export default function EmergencyScreen() {
         >
           <Text className="text-white text-4xl font-bold tracking-wide">
             {t("main.myRights")}
+          </Text>
+        </TouchableOpacity>
+
+        {/* Logout button */}
+        <TouchableOpacity
+          className="bg-green-800 rounded-xl px-2 py-2 shadow-md absolute bottom-10 right-0"
+          onPress={authContext.logOut}
+        >
+          <Text className="text-white text-base tracking-wide">
+            {t("main.logout")}
           </Text>
         </TouchableOpacity>
       </View>

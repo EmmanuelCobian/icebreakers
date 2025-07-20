@@ -43,6 +43,7 @@
   },
   "main": {
     "help": "AYUDA",
-    "myRights": "Mis Derechos"
+    "myRights": "Mis Derechos",
+    "logout": "Cerrar sesión"
   }
 }

@@ -38,8 +38,9 @@ export function AuthProvider({ children }: PropsWithChildren) {
 
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState<FirebaseAuthTypes.User | null>(null);
-  const [confirm, setConfirm] = useState<FirebaseAuthTypes.ConfirmationResult | null>(null);
-  
+  const [confirm, setConfirm] =
+    useState<FirebaseAuthTypes.ConfirmationResult | null>(null);
+
   function onAuthStateChanged(user: FirebaseAuthTypes.User | null) {
     setUser(user);
     if (initializing) setInitializing(false);
@@ -64,18 +65,20 @@ export function AuthProvider({ children }: PropsWithChildren) {
   async function confirmCode(code: string) {
     try {
       if (!confirm) {
-        console.log("No confirmation result available. Please try signing in again.");
+        console.log(
+          "No confirmation result available. Please try signing in again."
+        );
         return;
       }
       await confirm.confirm(code);
       setIsLoggedIn(true);
       await storeAuthState({ isLoggedIn: true });
-      router.replace("/(protected)/introMessage");
+      router.replace("/(protected)/main");
     } catch (error) {
       console.log("Invalid code.", error);
     }
   }
-  
+
   const storeAuthState = async (newState: { isLoggedIn: boolean }) => {
     try {
       const jsonValue = JSON.stringify(newState);
@@ -84,12 +87,12 @@ export function AuthProvider({ children }: PropsWithChildren) {
       console.log("Error saving", error);
     }
   };
-  
+
   const logIn = async () => {
     try {
       setIsLoggedIn(true);
       await storeAuthState({ isLoggedIn: true });
-      router.replace("/(protected)/welcome");
+      router.replace("/(protected)/main");
       // await signInWithPhoneNumber("+1 555-123-4567");
       // router.push("/verify-code");
     } catch (error) {
@@ -98,10 +101,11 @@ export function AuthProvider({ children }: PropsWithChildren) {
   };
 
   const logOut = () => {
+    console.log("Hi");
     auth().signOut();
     setIsLoggedIn(false);
     storeAuthState({ isLoggedIn: false });
-    router.replace("/login");
+    router.replace("/welcome");
   };
 
   useEffect(() => {

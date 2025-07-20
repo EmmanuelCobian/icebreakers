@@ -3,7 +3,7 @@ import { Redirect, Stack } from "expo-router";
 import { useContext } from "react";
 
 export const unstable_settings = {
-  initialRouteName: "welcome", // anchor
+  initialRouteName: "main", // anchor
 };
 
 export default function ProtectedLayout() {
@@ -14,31 +14,25 @@ export default function ProtectedLayout() {
   }
 
   if (!authState.isLoggedIn) {
-    return <Redirect href="/login" />;
+    return <Redirect href="/welcome" />;
   }
 
   return (
     <Stack>
       <Stack.Screen
-        name="welcome"
+        name="addContacts"
         options={{
           headerShown: true,
         }}
       />
       <Stack.Screen
-        name="introMessage"
+        name="main"
         options={{
           headerShown: true,
         }}
       />
       <Stack.Screen
-        name="introMessage2"
-        options={{
-          headerShown: true,
-        }}
-      />
-      <Stack.Screen
-        name="tutorial"
+        name="location"
         options={{
           headerShown: true,
         }}

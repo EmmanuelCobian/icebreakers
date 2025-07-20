@@ -15,7 +15,7 @@ export default function introMessage() {
       {/* Logo in top-left */}
       <View className="absolute z-10 m-5">
         <Image
-          source={require("../../assets/images/ice-breakers-logo.png")}
+          source={require("../assets/images/ice-breakers-logo.png")}
           className="w-[50px] h-[50px]"
           resizeMode="contain"
         />
@@ -34,7 +34,7 @@ export default function introMessage() {
           </Text>
         </View>
 
-        <Pressable onPress={() => router.push("/(protected)/tutorial")}>
+        <Pressable onPress={() => router.push("/tutorial")}>
           <View
             className="items-center justify-center w-[315px] h-[70px] pr-4 mt-2"
             style={{ backgroundColor: "#315E26", borderRadius: 8 }}
