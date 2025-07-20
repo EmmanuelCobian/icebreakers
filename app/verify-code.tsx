@@ -2,8 +2,10 @@ import { useContext, useState } from "react";
 import { View, TextInput, Text } from "react-native";
 import { Button } from "@/components/Button";
 import { AuthContext } from "@/utils/authContext";
+import { useLocalSearchParams } from "expo-router";
 
 export default function VerifyCodeScreen() {
+  const { phone } = useLocalSearchParams();
   const [code, setCode] = useState("");
   const authContext = useContext(AuthContext);
 
@@ -17,7 +19,10 @@ export default function VerifyCodeScreen() {
         keyboardType="number-pad"
         className="border p-2 my-4"
       />
-      <Button title="Confirm Code" onPress={() => authContext.confirmCode(code)} />
+      <Button
+        title="Confirm Code"
+        onPress={() => authContext.confirmCode(code, phone)}
+      />
     </View>
   );
 }
