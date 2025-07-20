@@ -10,7 +10,7 @@ export default function introMessage() {
       {/* Logo in top-left */}
       <View className="z-10 m-5">
         <Image
-          source={require("../../../assets/images/ice-breakers-logo.png")}
+          source={require("../../assets/images/ice-breakers-logo.png")}
           className="w-[50px] h-[50px]"
           resizeMode="contain"
         />
@@ -55,7 +55,7 @@ export default function introMessage() {
 
         <View className="w-full flex-row justify-end pr-4 mt-[10px]">
             <Image
-            source={require("../../../assets/images/arrowRight.png")}
+            source={require("../../assets/images/arrowRight.png")}
             className="w-[60px] h-[60px]"
             resizeMode="cover"
             />

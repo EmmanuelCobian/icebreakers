@@ -1,15 +1,19 @@
 import { View, Text, Image, SafeAreaView, Dimensions } from "react-native";
 import { LanguageSelector } from "@/components/LanguageSelector";
+import { useRouter } from "expo-router";
+import { Pressable } from "react-native";
 
 const { height } = Dimensions.get("window");
 
 export default function introMessage() {
+  const router = useRouter();
+
   return (
     <SafeAreaView className="flex-1 bg-white">
       {/* Logo in top-left */}
       <View className="absolute z-10 m-5">
         <Image
-          source={require("../../../assets/images/ice-breakers-logo.png")}
+          source={require("../../assets/images/ice-breakers-logo.png")}
           className="w-[50px] h-[50px]"
           resizeMode="contain"
         />
@@ -35,11 +39,13 @@ export default function introMessage() {
         </View> */}
 
         <View className="w-full flex-row justify-end pr-4 mt-[10px]">
+          <Pressable onPress={() => router.push("/(protected)/introMessage2")}>
             <Image
-            source={require("../../../assets/images/arrowRight.png")}
+            source={require("../../assets/images/arrowRight.png")}
             className="w-[70px] h-[70px]"
             resizeMode="cover"
             />
+          </Pressable>
         </View>
       </View>
     </SafeAreaView>
