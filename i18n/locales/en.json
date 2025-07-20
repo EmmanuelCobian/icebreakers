@@ -11,5 +11,34 @@
     "name": "Name",
     "placeholder": "Phone number",
     "button": "Sign up!"
+  },
+  "welcome": {
+    "title-p1": "Welcome to",
+    "title-p2": "ICE Breakers",
+    "subtitle": "Your trusted emergency companion",
+    "description": "With one tap, connect to help, alert loved ones, and protect your rights — wherever you are."
+  },
+  "intro1": {
+    "title-p1": "ICE Breakers was built by",
+    "title-p2": "Immigrants",
+    "description": "“We’ve lived the fear, the uncertainty, and the silence when help felt out of reach. We’ve seen our communities targeted, our rights stripped away, and our loved ones disappear without warning.”"
+  },
+  "intro2": {
+    "quote": "“We built this app as an act of resistance and care — a way to protect each other when the systems around us won’t. It’s a lifeline born from love, urgency, and the deep belief that our people deserve safety, dignity, and the power to act when it matters most.”",
+    "team": "– Ice Breakers' Team",
+    "started": "Get Started!"
+  },
+  "tutorial": {
+    "title-p1": "How does",
+    "title-p2": "ICE Breakers",
+    "title-p3": "Work:",
+    "point-1": "1. Add your emergency contacts.",
+    "description-1": "We'll only use these to alert your loved ones when you hit the panic button.",
+    "point-2": "2. Enable your location (optional).",
+    "description-2": "So we can connect you to local help and nearby immigration resources.",
+    "point-3": "3. In an emergency, tap the big red button.",
+    "description-3": "We’ll instantly send a message with your location to your trusted contacts and local rapid response teams.",
+    "point-4": "4. Show your “Know Your Rights Card”.",
+    "description-4": "Know your rights and show them in your preferred language — even during stressful moments."
   }
 }

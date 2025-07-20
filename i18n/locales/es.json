@@ -11,5 +11,34 @@
     "name": "Nombre",
     "placeholder": "Número de teléfono",
     "button": "¡Regístrate!"
+  },
+  "welcome": {
+    "title-p1": "Bienvenido a",
+    "title-p2": "ICE Breakers",
+    "subtitle": "Tu compañero de emergencia confiable",
+    "description": "Con un solo toque, conéctate con ayuda, alerta a tus seres queridos y protege tus derechos — dondequiera que estés."
+  },
+  "intro1": {
+    "title-p1": "ICE Breakers fue creado por",
+    "title-p2": "Inmigrantes",
+    "description": "“Hemos vivido el miedo, la incertidumbre y el silencio cuando la ayuda parecía inalcanzable. Hemos visto a nuestras comunidades ser atacadas, nuestros derechos arrebatados y a nuestros seres queridos desaparecer sin previo aviso.”"
+  },
+  "intro2": {
+    "quote": "“Creamos esta aplicación como un acto de resistencia y cuidado — una forma de protegernos cuando los sistemas a nuestro alrededor no lo hacen. Es un salvavidas nacido del amor, la urgencia y la profunda creencia de que nuestra gente merece seguridad, dignidad y el poder de actuar cuando más importa.”",
+    "team": "– El equipo de ICE Breakers",
+    "started": "¡Comenzar!"
+  },
+  "tutorial": {
+    "title-p1": "¿Cómo funciona",
+    "title-p2": "ICE Breakers",
+    "title-p3": "?:",
+    "point-1": "1. Agrega tus contactos de emergencia.",
+    "description-1": "Solo los usaremos para alertar a tus seres queridos cuando presiones el botón de pánico.",
+    "point-2": "2. Activa tu ubicación (opcional).",
+    "description-2": "Así podremos conectarte con ayuda local y recursos de inmigración cercanos.",
+    "point-3": "3. En una emergencia, toca el gran botón rojo.",
+    "description-3": "Enviaremos al instante un mensaje con tu ubicación a tus contactos de confianza y equipos locales de respuesta rápida.",
+    "point-4": "4. Muestra tu “Tarjeta de Conozca Sus Derechos”.",
+    "description-4": "Conoce tus derechos y muéstralos en tu idioma preferido — incluso en momentos de estrés."
   }
 }
