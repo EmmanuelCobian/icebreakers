@@ -40,5 +40,9 @@
     "description-3": "We’ll instantly send a message with your location to your trusted contacts and local rapid response teams.",
     "point-4": "4. Show your “Know Your Rights Card”.",
     "description-4": "Know your rights and show them in your preferred language — even during stressful moments."
+  },
+  "main": {
+    "help": "HELP",
+    "myRights": "My Rights"
   }
 }

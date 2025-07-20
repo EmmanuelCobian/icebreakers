@@ -10,6 +10,7 @@ const { height } = Dimensions.get("window");
 export default function introMessage() {
   const router = useRouter();
   const { t } = useTranslation();
+  const router = useRouter();
   return (
     <SafeAreaView className="flex-1 bg-white">
       {/* Logo in top-left */}
