@@ -1,8 +1,23 @@
+<div align="center">
+  <!-- <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a> -->
+
+  <h3 align="center">Ice-Breakers</h3>
+
+  <p align="center">
+     Ice-Breakers is a multilingual emergency support app designed to protect and empower immigrant communities. Ice-Breakers connects you to trusted support instantly, with just one tap of a button. 
+    <br />
+    <br />
+    &middot;
+    <a href="https://youtu.be/Ar62Q50fRYk">View Demo</a>
+    &middot;
+  </p>
+</div>
+
 ## About Ice-Breakers
 
-**Track Challenge 2: Innovating our communities** \
-\
-**Description: Ice-Breakers is a multilingual emergency support app designed to protect and empower immigrant communities. Ice-Breakers connects you to trusted support instantly, with just one tap of a button**
+**Track Challenge 2: Innovating our communities**
 
 Many technologies fail to prioritize or protect the unique needs of immigrants and underrepresented communities. Ice-Breakers seeks to bridge this gap by offering a tailored emergency support system that is multilingual, intuitive, and built with love.
 
@@ -93,9 +108,8 @@ Distributed under the Unlicense. See \`LICENSE.txt\` for more details.
 <p>Emmanuel Cobain Durate - (https://github.com/EmmanuelCobian)</p>
 <p>Haibian Yu - (https://github.com/haibn) </p>
 <p>Victor Hernandez - (https://github.com/hernandezv0110)</p>
-<p>Alejandro Patino - </p>
 <p>Auner Barrios Vasquez -(https://github.com/abarriosvasquez) </p>
-Project Link: [https://github.com/EmmanuelCobian/icebreakers](https://github.com/EmmanuelCobian/icebreakers)
+Project Link: (https://github.com/EmmanuelCobian/icebreakers)
 
 ## Acknowledgments
 
