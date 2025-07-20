@@ -21,23 +21,26 @@ export default function EmergencyScreen() {
   const [showRightsCard, setShowRightsCard] = useState(false);
 
   const handleLanguageChange = (lang: LanguageOption) => {
-    setLanguage(lang);
+    //setLanguage(lang);
     i18n.changeLanguage(lang === "English" ? "en" : "es");
     setDropdownVisible(false);
   };
- const handleSendEmergencySMS = async () => {
+  const handleSendEmergencySMS = async () => {
     try {
-      const response = await fetch(`http://10.0.0.42:3000/api/users/${authContext.phone}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      });
+      const response = await fetch(
+        `http://10.0.0.42:3000/api/users/${authContext.phone}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        }
+      );
       const text = await response.text();
       try {
         const user_json = JSON.parse(text);
-        const user = user_json['user']
+        const user = user_json["user"];
         if (
           !user ||
           !user.emergencyContacts ||
@@ -49,12 +52,12 @@ export default function EmergencyScreen() {
           );
           return;
         }
-  
+
         const userContactNumbers = user.emergencyContacts.map(
           (c: any) => c.phone
         );
-        
-        const subject = user.name != '' ? user.name : "Your contact"
+
+        const subject = user.name != "" ? user.name : "Your contact";
         SendSMS.send(
           {
             body: `🚨 Emergency Alert! ${subject} at ${user.phone} needs help immediately! They are in the presence of ICE`,
@@ -78,15 +81,15 @@ export default function EmergencyScreen() {
         console.error("Failed to fetch user info or send SMS:", err);
         Alert.alert("Error", "Could not send emergency message.");
       }
-      } catch (e) {
-        console.log("Error parsing JSON", e);
-      }
+    } catch (e) {
+      console.log("Error parsing JSON", e);
+    }
   };
 
   return (
-    <View className="flex-1 bg-white items-center justify-between pt-10 pb-16 px-4 relative">
+    <View className="flex-1 bg-white items-center justify-between pt-10 pb-16 px-4 relative mt-20">
       {/* Language toggle (top-left) */}
-      <LanguageSelector language={language} onChange={handleLanguageChange} />
+      <LanguageSelector onChange={handleLanguageChange} />
 
       {/* Top-left logo */}
       <TouchableOpacity
@@ -107,7 +110,7 @@ export default function EmergencyScreen() {
           className="bg-red-600 rounded-3xl px-12 py-28 shadow-lg w-full items-center"
           onPress={handleSendEmergencySMS}
         >
-          <Text className="text-white text-8xl font-extrabold tracking-wide">
+          <Text className="text-white text-7xl font-extrabold tracking-wide">
             {t("main.help")}
           </Text>
         </TouchableOpacity>
@@ -117,7 +120,7 @@ export default function EmergencyScreen() {
           className="bg-orange-500 rounded-2xl px-10 py-12 shadow-md w-4/5 items-center"
           onPress={() => setShowRightsCard(true)}
         >
-          <Text className="text-white text-4xl font-bold tracking-wide">
+          <Text className="text-white text-3xl font-bold tracking-wide">
             {t("main.myRights")}
           </Text>
         </TouchableOpacity>
@@ -131,40 +134,40 @@ export default function EmergencyScreen() {
             {t("main.logout")}
           </Text>
         </TouchableOpacity>
-
       </View>
 
       {/* Rights Overlay Card */}
       {showRightsCard && (
-      <View className="absolute inset-0 z-50 items-center justify-center bg-black/20 px-4">
-        <View className="flex bg-red-600 rounded-2xl p-6 w-full max-w-lg">
-          <Text className="text-white text-base mb-4 font-semibold">
-            {t("main.right-1")}
-          </Text>
-          <Text className="text-white text-base mb-4 font-semibold">
-            {t("main.right-2")}
-          </Text>
-          <Text className="text-white text-base mb-4 font-semibold">
-            {t("main.right-3")}
-          </Text>
-          <Text className="text-white text-base mb-4 font-semibold">
-            {t("main.right-4")}
-          </Text>
-          <Text className="text-white text-base mb-4 font-semibold">
-            {t("main.right-5")}
-          </Text>
+        <View className="absolute inset-0 z-50 items-center justify-center bg-black/20 px-4">
+          <View className="flex bg-red-600 rounded-2xl p-6 w-full max-w-lg">
+            <Text className="text-white text-base mb-4 font-semibold">
+              {t("main.right-1")}
+            </Text>
+            <Text className="text-white text-base mb-4 font-semibold">
+              {t("main.right-2")}
+            </Text>
+            <Text className="text-white text-base mb-4 font-semibold">
+              {t("main.right-3")}
+            </Text>
+            <Text className="text-white text-base mb-4 font-semibold">
+              {t("main.right-4")}
+            </Text>
+            <Text className="text-white text-base mb-4 font-semibold">
+              {t("main.right-5")}
+            </Text>
 
-          {/* Close Button */}
-          <TouchableOpacity
-            className="absolute bottom-4 right-4"
-            onPress={() => setShowRightsCard(false)}
-          >
-            <Text className="text-white text-lg underline font-bold">{t("main.go-back")}</Text>
-          </TouchableOpacity>
+            {/* Close Button */}
+            <TouchableOpacity
+              className="absolute bottom-4 right-4"
+              onPress={() => setShowRightsCard(false)}
+            >
+              <Text className="text-white text-lg underline font-bold">
+                {t("main.go-back")}
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
-    )}
-
+      )}
     </View>
   );
 }
