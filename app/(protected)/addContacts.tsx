@@ -68,19 +68,20 @@ export default function addContacts() {
             placeholder="Name (optional)"
             value={contacts[currentIndex].name}
             onChangeText={(text) => handleInputChange("name", text)}
-            className="border border-gray-300 rounded-xl px-4 py-3 text-lg"
+            className="border border-gray-300 rounded-xl px-4 py-3 text-lg mt-2"
           />
 
           <TextInput
             placeholder="Relationship (optional)"
             value={contacts[currentIndex].relationship}
             onChangeText={(text) => handleInputChange("relationship", text)}
-            className="border border-gray-300 rounded-xl px-4 py-3 text-lg"
+            className="border border-gray-300 rounded-xl px-4 py-3 text-lg mt-2"
           />
 
           {/* Add another contact */}
           <Pressable onPress={addNewContact} className="mt-4 items-end w-full">
-            <Text className="text-blue-600 underline text-base">
+            <Text className="underline text-base" 
+            style={{ color: "#315E26" }}>
               + Add another contact
             </Text>
           </Pressable>
