@@ -40,5 +40,9 @@
     "description-3": "Enviaremos al instante un mensaje con tu ubicación a tus contactos de confianza y equipos locales de respuesta rápida.",
     "point-4": "4. Muestra tu “Tarjeta de Conozca Sus Derechos”.",
     "description-4": "Conoce tus derechos y muéstralos en tu idioma preferido — incluso en momentos de estrés."
+  },
+  "main": {
+    "help": "AYUDA",
+    "myRights": "Mis Derechos"
   }
 }

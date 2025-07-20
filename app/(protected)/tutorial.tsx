@@ -2,11 +2,14 @@ import { View, Text, Image, SafeAreaView, Dimensions } from "react-native";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import { TutorialBox } from "@/components/TutorialBox";
 import { useTranslation } from "react-i18next";
+import { Pressable } from "react-native";
+import { useRouter } from "expo-router";
 
 const { height } = Dimensions.get("window");
 
 export default function introMessage() {
   const { t } = useTranslation();
+  const router = useRouter();
   return (
     <SafeAreaView className="flex-1 bg-white">
       {/* Logo in top-left */}
@@ -54,11 +57,13 @@ export default function introMessage() {
         <TutorialBox text={t("tutorial.description-4")} />
 
         <View className="w-full flex-row justify-end pr-4 mt-[10px]">
-          <Image
-            source={require("../../assets/images/arrowRight.png")}
-            className="w-[60px] h-[60px]"
-            resizeMode="cover"
-          />
+          <Pressable onPress={() => router.push("/(protected)/location")}>
+            <Image
+              source={require("../../assets/images/arrowRight.png")}
+              className="w-[70px] h-[70px]"
+              resizeMode="cover"
+            />
+          </Pressable>
         </View>
       </View>
     </SafeAreaView>
