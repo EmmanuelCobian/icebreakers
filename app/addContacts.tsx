@@ -76,7 +76,7 @@ export default function addContacts() {
             placeholder={t("add-contacts.phone")}
             keyboardType="phone-pad" 
             value={contacts[currentIndex].phone}
-            onChangeText={(text) => handleInputChange("phone", text)}
+            onChangeText={(text) => handleInputChange("phone", text.replace(/\D/g, '').slice(0, 10))}
             className="border border-gray-300 rounded-xl px-4 py-3 text-lg shadow-md bg-white"
           />
 

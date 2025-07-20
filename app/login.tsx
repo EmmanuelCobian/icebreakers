@@ -56,7 +56,7 @@ export default function LoginScreen() {
         placeholder={t("login.placeholder")}
         keyboardType="phone-pad"
         value={phone}
-        onChangeText={setPhone}
+        onChangeText={(text) => setPhone(text.replace(/\D/g, '').slice(0, 10))}
         className="bg-white border border-gray-300 rounded-lg px-4 py-3 mb-3 shadow-sm"
       />
 
