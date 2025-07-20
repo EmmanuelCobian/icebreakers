@@ -33,7 +33,7 @@ export default function Welcome() {
       {/* <LanguageSelector language={language} onChange={handleLanguageChange} /> */}
 
       {/* Bottom text */}
-      <View className="flex-1 items-center justify-center px-6">
+      <View className="flex-1 items-center justify-center px-6 mt-8">
         <Text className="text-center font-bold text-[60px] leading-none">
           {t("welcome.title-p1")}
         </Text>

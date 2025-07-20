@@ -40,7 +40,7 @@ export default function EnableLocationScreen() {
         <View className="flex-row items-center bg-white p-1 rounded-xl shadow-md">
           <TouchableOpacity
             className={`px-10 py-5 rounded-xl ${
-              locationEnabled ? "bg-white" : "bg-green-800"
+              locationEnabled ? "bg-white" : "bg-red-800"
             }`}
             onPress={() => setLocationEnabled(false)}
           >
