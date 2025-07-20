@@ -70,7 +70,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
       await confirm.confirm(code);
       setIsLoggedIn(true);
       await storeAuthState({ isLoggedIn: true });
-      router.replace("/welcome");
+      router.replace("/(protected)/(tabs)/introMessage");
     } catch (error) {
       console.log("Invalid code.", error);
     }
@@ -89,7 +89,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
     try {
       setIsLoggedIn(true);
       await storeAuthState({ isLoggedIn: true });
-      router.replace("/welcome");
+      router.replace("/(protected)/(tabs)/introMessage");
       // await signInWithPhoneNumber("+1 555-123-4567");
       // router.push("/verify-code");
     } catch (error) {
