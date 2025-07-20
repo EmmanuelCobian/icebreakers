@@ -2,11 +2,13 @@ import { View, Text, Image, SafeAreaView, Dimensions } from "react-native";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import { useRouter } from "expo-router";
 import { Pressable } from "react-native";
+import { useTranslation } from "react-i18next";
 
 const { height } = Dimensions.get("window");
 
 export default function introMessage() {
   const router = useRouter();
+  const { t } = useTranslation();
 
   return (
     <SafeAreaView className="flex-1 bg-white">
@@ -18,25 +20,27 @@ export default function introMessage() {
           resizeMode="contain"
         />
       </View>
-      
-      <LanguageSelector language="Spanish"/>
+
+      {/* <LanguageSelector language="Spanish"/> */}
 
       {/* Bottom text */}
       <View className="flex-1 items-center justify-center px-6">
         <Text className="text-left font-semibold text-[18.8px] leading-none w-[317px] mt-6">
-          ““We built this app as an act of resistance and care — a way to protect each other when the systems around us won’t. It’s a lifeline born from love, urgency, and the deep belief that our people deserve safety, dignity, and the power to act when it matters most.””
+          {t("intro2.quote")}
         </Text>
         <View className="w-[90%] items-end pr-4 mt-2">
           <Text className="font-semibold text-[18.8px] leading-none">
-            – Ice Breakers' Team {'\n'}
+            {t("intro2.team")} {"\n"}
           </Text>
         </View>
 
         <Pressable onPress={() => router.push("/(protected)/tutorial")}>
-          <View className="items-center justify-center w-[315px] h-[70px] pr-4 mt-2"
-          style={{ backgroundColor: "#315E26", borderRadius: 8 }} >
+          <View
+            className="items-center justify-center w-[315px] h-[70px] pr-4 mt-2"
+            style={{ backgroundColor: "#315E26", borderRadius: 8 }}
+          >
             <Text className="font-semibold text-[25px] leading-none text-white">
-              Get Started!
+              {t("intro2.started")}
             </Text>
           </View>
         </Pressable>

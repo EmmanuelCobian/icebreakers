@@ -2,12 +2,14 @@ import { View, Text, Image, SafeAreaView, Dimensions } from "react-native";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import { useRouter } from "expo-router";
 import { Pressable } from "react-native";
+import { useTranslation } from "react-i18next";
 
 const { height } = Dimensions.get("window");
 
 export default function Welcome() {
   const router = useRouter();
-  
+  const { t } = useTranslation();
+
   return (
     <SafeAreaView className="flex-1 bg-white">
       {/* Logo in top-left */}
@@ -28,29 +30,29 @@ export default function Welcome() {
         />
       </View>
 
-      <LanguageSelector language="Spanish"/>
+      {/* <LanguageSelector language={language} onChange={handleLanguageChange} /> */}
 
       {/* Bottom text */}
       <View className="flex-1 items-center justify-center px-6">
         <Text className="text-center font-bold text-[60px] leading-none">
-          Welcome to
+          {t("welcome.title-p1")}
         </Text>
         <Text className="text-center font-bold text-[55px] leading-none">
-          ICE Breakers
+          {t("welcome.title-p2")}
         </Text>
         <Text className="text-center font-semibold text-[18.8px] leading-none">
-            Your trusted emergency companion. {'\n'}
+          {t("welcome.subtitle")} {"\n"}
         </Text>
         <Text className="text-left font-semibold text-[18.8px] leading-none w-[317px]">
-        With one tap, connect to help, alert loved ones, and protect your rights — wherever you are.
+          {t("welcome.description")}
         </Text>
 
         <View className="w-full flex-row justify-end pr-4 mt-[10px]">
           <Pressable onPress={() => router.push("/(protected)/introMessage")}>
             <Image
-            source={require("../../assets/images/arrowRight.png")}
-            className="w-[70px] h-[70px]"
-            resizeMode="cover"
+              source={require("../../assets/images/arrowRight.png")}
+              className="w-[70px] h-[70px]"
+              resizeMode="cover"
             />
           </Pressable>
         </View>
