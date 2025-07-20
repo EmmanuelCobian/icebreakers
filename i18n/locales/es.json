@@ -1,0 +1,15 @@
+{
+  "login": {
+    "title": "Regístrate para una cuenta:",
+    "placeholder": "Número de teléfono",
+    "button": "¡Iniciar sesión!",
+    "noAccount": "¿No tienes una cuenta?",
+    "signup": "Regístrate"
+  },
+  "signup": {
+    "title": "Crea una cuenta:",
+    "name": "Nombre",
+    "placeholder": "Número de teléfono",
+    "button": "¡Regístrate!"
+  }
+}

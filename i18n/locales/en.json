@@ -1,0 +1,15 @@
+{
+  "login": {
+    "title": "Sign up for an Account:",
+    "placeholder": "Phone number",
+    "button": "Sign in!",
+    "noAccount": "Don’t have an account?",
+    "signup": "Sign up"
+  },
+  "signup": {
+    "title": "Create an Account:",
+    "name": "Name",
+    "placeholder": "Phone number",
+    "button": "Sign up!"
+  }
+}
