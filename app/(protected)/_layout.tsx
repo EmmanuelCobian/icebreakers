@@ -3,7 +3,7 @@ import { Redirect, Stack } from "expo-router";
 import { useContext } from "react";
 
 export const unstable_settings = {
-  initialRouteName: "(tabs)", // anchor
+  initialRouteName: "welcome", // anchor
 };
 
 export default function ProtectedLayout() {
@@ -20,22 +20,27 @@ export default function ProtectedLayout() {
   return (
     <Stack>
       <Stack.Screen
-        name="(tabs)"
+        name="welcome"
         options={{
-          headerShown: false,
+          headerShown: true,
         }}
       />
       <Stack.Screen
-        name="modal"
+        name="introMessage"
         options={{
-          presentation: "modal",
+          headerShown: true,
         }}
       />
       <Stack.Screen
-        name="modal-with-stack"
+        name="introMessage2"
         options={{
-          presentation: "modal",
-          headerShown: false,
+          headerShown: true,
+        }}
+      />
+      <Stack.Screen
+        name="tutorial"
+        options={{
+          headerShown: true,
         }}
       />
     </Stack>

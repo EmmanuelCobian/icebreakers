@@ -10,6 +10,12 @@ export default function RootLayout() {
       <StatusBar style="auto" />
       <Stack>
         <Stack.Screen
+          name="index"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
           name="(protected)"
           options={{
             headerShown: false,
@@ -18,6 +24,18 @@ export default function RootLayout() {
         />
         <Stack.Screen
           name="login"
+          options={{
+            animation: "none",
+          }}
+        />
+        <Stack.Screen
+          name="signup"
+          options={{
+            animation: "none",
+          }}
+        />
+        <Stack.Screen
+          name="verify-code"
           options={{
             animation: "none",
           }}

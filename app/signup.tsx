@@ -1,16 +1,9 @@
-import {
-  View,
-  TextInput,
-  Image,
-  Pressable,
-  Text,
-  TouchableOpacity,
-} from "react-native";
+import { View, TextInput, Image } from "react-native";
 import { useContext, useState } from "react";
 import { AuthContext } from "@/utils/authContext";
 import { AppText } from "@/components/AppText";
 import { Button } from "@/components/Button";
-import { Link, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import {
   LanguageSelector,
   LanguageOption,
