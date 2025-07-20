@@ -15,8 +15,11 @@ import {
   LanguageSelector,
   LanguageOption,
 } from "@/components/LanguageSelector";
+import { useTranslation } from "react-i18next";
+import i18n from "@/i18n";
 
 export default function LoginScreen() {
+  const { t } = useTranslation();
   const authContext = useContext(AuthContext);
   const router = useRouter();
   const [phone, setPhone] = useState("");
@@ -25,13 +28,14 @@ export default function LoginScreen() {
 
   const handleLanguageChange = (lang: LanguageOption) => {
     setLanguage(lang);
+    i18n.changeLanguage(lang === "English" ? "en" : "es");
     setDropdownVisible(false);
   };
 
   return (
     <View className="flex-1 bg-white px-6 pt-40">
       {/* Language toggle (top-right) */}
-      <LanguageSelector language={language} onChange={setLanguage} />
+      <LanguageSelector language={language} onChange={handleLanguageChange} />
 
       {/* Logo */}
       <View className="items-center mb-6">
@@ -44,12 +48,12 @@ export default function LoginScreen() {
 
       {/* Title */}
       <AppText className="text-center text-lg font-semibold mb-4">
-        Sign up for an Account:
+        {t("login.title")}
       </AppText>
 
       {/* Phone number input */}
       <TextInput
-        placeholder="Phone number"
+        placeholder={t("login.placeholder")}
         keyboardType="phone-pad"
         value={phone}
         onChangeText={setPhone}
@@ -58,16 +62,18 @@ export default function LoginScreen() {
 
       {/* Login button */}
       <Button
-        title="Sign in!"
+        title={t("login.button")}
         onPress={authContext.logIn}
         className="bg-green-800 rounded-lg py-3 items-center mt-5"
       />
 
       {/* Sign up link */}
       <View className="mt-5 flex-row justify-center">
-        <Text className="text-black">Don’t have an account? </Text>
+        <Text className="text-black">{t("login.noAccount")}</Text>
         <Pressable onPress={() => router.replace("/signup")}>
-          <Text className="text-red-600 font-semibold">Sign up</Text>
+          <Text className="text-red-600 font-semibold">
+            {t("login.signup")}
+          </Text>
         </Pressable>
       </View>
     </View>

@@ -15,11 +15,13 @@ import {
   LanguageSelector,
   LanguageOption,
 } from "@/components/LanguageSelector";
+import { useTranslation } from "react-i18next";
+import i18n from "@/i18n";
 
 export default function SignupScreen() {
   const router = useRouter();
   const authContext = useContext(AuthContext);
-
+  const { t } = useTranslation();
   const [phone, setPhone] = useState("");
   const [name, setName] = useState("");
   const [language, setLanguage] = useState<LanguageOption>("English");
@@ -27,12 +29,13 @@ export default function SignupScreen() {
 
   const handleLanguageChange = (lang: LanguageOption) => {
     setLanguage(lang);
+    i18n.changeLanguage(lang === "English" ? "en" : "es");
     setDropdownVisible(false);
   };
 
   return (
     <View className="flex-1 bg-white px-6 pt-40">
-      <LanguageSelector language={language} onChange={setLanguage} />
+      <LanguageSelector language={language} onChange={handleLanguageChange} />
 
       {/* Logo */}
       <View className="items-center mb-6">
@@ -45,12 +48,12 @@ export default function SignupScreen() {
 
       {/* Title */}
       <AppText className="text-center text-lg font-semibold mb-4">
-        Create an Account:
+        {t("signup.title")}
       </AppText>
 
-      {/* Phone number input */}
+      {/* Name input */}
       <TextInput
-        placeholder="Name"
+        placeholder={t("signup.name")}
         keyboardType="phone-pad"
         value={name}
         onChangeText={setName}
@@ -59,7 +62,7 @@ export default function SignupScreen() {
 
       {/* Phone number input */}
       <TextInput
-        placeholder="Phone number"
+        placeholder={t("signup.placeholder")}
         keyboardType="phone-pad"
         value={phone}
         onChangeText={setPhone}
@@ -68,7 +71,7 @@ export default function SignupScreen() {
 
       {/* Login button */}
       <Button
-        title="Sign up!"
+        title={t("signup.button")}
         onPress={authContext.logIn}
         className="bg-green-800 rounded-lg py-3 items-center mt-5"
       />
