@@ -126,6 +126,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
   const newLogIn = async (phone: string) => {
     try {
       setIsLoggedIn(true);
+      setPhone(phone);
       await storeAuthState({ isLoggedIn: true, phone: phone });
       router.replace("/(protected)/location");
       // await signInWithPhoneNumber("+1 555-123-4567");
