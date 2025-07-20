@@ -60,7 +60,8 @@ export default function EmergencyScreen() {
         const subject = user.name != "" ? user.name : "Your contact";
         SendSMS.send(
           {
-            body: `🚨 Emergency Alert! ${subject} at ${user.phone} needs help immediately! They are in the presence of ICE`,
+            body: `🚨 Emergency Alert! ${subject} at ${user.phone} needs help immediately! They are in the presence of ICE. Find local immigration legal help: https://www.immigrationlawhelp.org/
+                   🚨 ¡Alerta de Emergencia! ¡${subject} al número ${user.phone} necesita ayuda inmediata! Están en presencia de ICE. Encuentra ayuda legal de inmigración cerca de ti: https://www.immigrationlawhelp.org/`,
             recipients: userContactNumbers,
             allowAndroidSendWithoutReadPermission: true,
           },
