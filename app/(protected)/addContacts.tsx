@@ -61,21 +61,21 @@ export default function addContacts() {
             keyboardType="phone-pad"
             value={contacts[currentIndex].phone}
             onChangeText={(text) => handleInputChange("phone", text)}
-            className="border border-gray-300 rounded-xl px-4 py-3 text-lg"
+            className="border border-gray-300 rounded-xl px-4 py-3 text-lg shadow-md bg-white"
           />
 
           <TextInput
             placeholder="Name (optional)"
             value={contacts[currentIndex].name}
             onChangeText={(text) => handleInputChange("name", text)}
-            className="border border-gray-300 rounded-xl px-4 py-3 text-lg mt-2"
+            className="border border-gray-300 rounded-xl px-4 py-3 text-lg mt-2 shadow-md bg-white"
           />
 
           <TextInput
             placeholder="Relationship (optional)"
             value={contacts[currentIndex].relationship}
             onChangeText={(text) => handleInputChange("relationship", text)}
-            className="border border-gray-300 rounded-xl px-4 py-3 text-lg mt-2"
+            className="border border-gray-300 rounded-xl px-4 py-3 text-lg mt-2 shadow-md bg-white"
           />
 
           {/* Add another contact */}
@@ -116,13 +116,13 @@ export default function addContacts() {
 
       {/* Bottom-right arrow to next screen */}
       <View className="w-full flex-row justify-end pr-4 mt-[10px]">
-        {/* <Pressable onPress={() => router.push("/(protected)/introMessage2")}> */}
+        <Pressable onPress={() => router.push("/(protected)/location")}>
           <Image
             source={require("../../assets/images/arrowRight.png")}
             className="w-[70px] h-[70px]"
             resizeMode="cover"
           />
-        {/* </Pressable> */}
+        </Pressable>
       </View>
     </SafeAreaView>
   );
