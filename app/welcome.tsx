@@ -1,14 +1,27 @@
 import { View, Text, Image, SafeAreaView, Dimensions } from "react-native";
-import { LanguageSelector } from "@/components/LanguageSelector";
+import {
+  LanguageSelector,
+  LanguageOption,
+} from "@/components/LanguageSelector";
 import { useRouter } from "expo-router";
 import { Pressable } from "react-native";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import i18n from "@/i18n";
 
 const { height } = Dimensions.get("window");
 
 export default function Welcome() {
   const router = useRouter();
   const { t } = useTranslation();
+  const [language, setLanguage] = useState<LanguageOption>("English");
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+
+  const handleLanguageChange = (lang: LanguageOption) => {
+    setLanguage(lang);
+    i18n.changeLanguage(lang === "English" ? "en" : "es");
+    setDropdownVisible(false);
+  };
 
   return (
     <SafeAreaView className="flex-1 bg-white mt-20">
@@ -30,7 +43,7 @@ export default function Welcome() {
         />
       </View>
 
-      {/* <LanguageSelector language={language} onChange={handleLanguageChange} /> */}
+      <LanguageSelector language={language} onChange={handleLanguageChange} />
 
       {/* Bottom text */}
       <View className="flex-1 items-center justify-center px-6 mt-8">
