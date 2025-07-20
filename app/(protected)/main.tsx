@@ -27,7 +27,7 @@ export default function EmergencyScreen() {
   };
  const handleSendEmergencySMS = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/api/users/${authContext.phone}`, {
+      const response = await fetch(`http://10.0.0.42:3000/api/users/${authContext.phone}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -53,10 +53,11 @@ export default function EmergencyScreen() {
         const userContactNumbers = user.emergencyContacts.map(
           (c: any) => c.phone
         );
-  
+        
+        const subject = user.name != '' ? user.name : "Your contact"
         SendSMS.send(
           {
-            body: `🚨 Emergency Alert! ${user.name || "Your contact"} at ${user.phone} needs help immediately! They are in the presence of ICE`,
+            body: `🚨 Emergency Alert! ${subject} at ${user.phone} needs help immediately! They are in the presence of ICE`,
             recipients: userContactNumbers,
             allowAndroidSendWithoutReadPermission: true,
           },

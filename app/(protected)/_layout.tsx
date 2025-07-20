@@ -22,7 +22,7 @@ export default function ProtectedLayout() {
       <Stack.Screen
         name="main"
         options={{
-          headerShown: true,
+          headerShown: false,
         }}
       />
       <Stack.Screen
