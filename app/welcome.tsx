@@ -47,18 +47,18 @@ export default function Welcome() {
 
       {/* Bottom text */}
       <View className="flex-1 items-center justify-center px-6 mt-8">
-        <Text className="text-center font-bold text-[60px] leading-none">
+        <Text className="text-center font-bold text-[60px] leading-none w-[371px]">
           {t("welcome.title-p1")}
         </Text>
-        <Text className="text-center font-bold text-[55px] leading-none">
+        <Text className="text-center font-bold text-[55px] leading-none w-[371px]">
           {t("welcome.title-p2")}
         </Text>
-        <Text className="text-center font-semibold text-[18.8px] leading-none">
+        <Text className="text-center font-semibold text-[18.8px] leading-none w-[371px]">
           {t("welcome.subtitle")} {"\n"}
         </Text>
-        <Text className="text-left font-semibold text-[18.8px] leading-none w-[317px]">
+        <Text className="text-start font-semibold text-[18.8px] leading-none w-[313px]">
           {t("welcome.description")}
-        </Text>
+        </Text> 
 
         <View className="w-full flex-row justify-end pr-4 mt-[10px]">
           <View className="absolute left-10 top-8">
