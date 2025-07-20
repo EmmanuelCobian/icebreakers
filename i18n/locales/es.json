@@ -49,5 +49,15 @@
   "location": {
     "title-p1": "Habilitar",
     "title-p2": "Ubicación"
+  },
+  "add-contacts": {
+    "emergency": "Contactos",
+    "contacts": "De Emergencia",
+    "phone": "Numero de Teléfono",
+    "name": "Nombre (opcional)",
+    "relationship": "Relación (opcional)",
+    "add-contact" : "+ Agregar otro contacto",
+    "contact" : "Contacto",
+    "of" : "de"
   }
 }

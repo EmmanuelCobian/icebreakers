@@ -66,29 +66,29 @@ export default function addContacts() {
         contentContainerStyle={{ flexGrow: 1, justifyContent: "center" }}
       >
         <View className="items-start justify-center px-6 pt-[80px]">
-          <Text className="font-bold text-[50px] leading-none">Emergency</Text>
-          <Text className="font-bold text-[50px] leading-none">Contacts</Text>
+          <Text className="font-bold text-[50px] leading-none">{t("add-contacts.emergency")}</Text>
+          <Text className="font-bold text-[50px] leading-none">{t("add-contacts.contacts")}</Text>
         </View>
 
         {/* Contact Form */}
         <View className="px-6 mt-8 space-y-4">
           <TextInput
-            placeholder="Phone Number"
-            keyboardType="phone-pad"
+            placeholder={t("add-contacts.phone")}
+            keyboardType="phone-pad" 
             value={contacts[currentIndex].phone}
             onChangeText={(text) => handleInputChange("phone", text)}
             className="border border-gray-300 rounded-xl px-4 py-3 text-lg shadow-md bg-white"
           />
 
           <TextInput
-            placeholder="Name (optional)"
+            placeholder={t("add-contacts.name")}
             value={contacts[currentIndex].name}
             onChangeText={(text) => handleInputChange("name", text)}
             className="border border-gray-300 rounded-xl px-4 py-3 text-lg mt-2 shadow-md bg-white"
           />
 
           <TextInput
-            placeholder="Relationship (optional)"
+            placeholder={t("add-contacts.relationship")}
             value={contacts[currentIndex].relationship}
             onChangeText={(text) => handleInputChange("relationship", text)}
             className="border border-gray-300 rounded-xl px-4 py-3 text-lg mt-2 shadow-md bg-white"
@@ -97,7 +97,7 @@ export default function addContacts() {
           {/* Add another contact */}
           <Pressable onPress={addNewContact} className="mt-4 items-end w-full">
             <Text className="underline text-base" style={{ color: "#315E26" }}>
-              + Add another contact
+            {t("add-contacts.add-contact")}
             </Text>
           </Pressable>
         </View>
@@ -112,7 +112,7 @@ export default function addContacts() {
                 ←
               </Text>
             </Pressable>
-            <Text className="text-base">{`Contact ${currentIndex + 1} of ${contacts.length}`}</Text>
+            <Text className="text-base">{`${t("add-contacts.contact")} ${currentIndex + 1} ${t("add-contacts.of")} ${contacts.length}`}</Text>
             <Pressable
               onPress={goToNext}
               disabled={currentIndex === contacts.length - 1}

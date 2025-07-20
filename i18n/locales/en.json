@@ -49,5 +49,15 @@
   "location": {
     "title-p1": "Enable",
     "title-p2": "Location"
+  },
+  "add-contacts": {
+    "emergency": "Emergency",
+    "contacts": "Contacts",
+    "phone": "Phone Number",
+    "name": "Name (optional)",
+    "relationship": "Relationship (optional)",
+    "add-contact" : "+ Add another contact",
+    "contact" : "Contact",
+    "of" : "of"
   }
 }
