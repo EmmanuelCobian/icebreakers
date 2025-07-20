@@ -1,15 +1,16 @@
-## About The Project
+## About Ice-Breakers
 
-**Challenge 2: Innovating our communities**
+**Track Challenge 2: Innovating our communities** \
+\
+**Description: Ice-Breakers is a multilingual emergency support app designed to protect and empower immigrant communities. Ice-Breakers connects you to trusted support instantly, with just one tap of a button**
 
 Many technologies fail to prioritize or protect the unique needs of immigrants and underrepresented communities. Ice-Breakers seeks to bridge this gap by offering a tailored emergency support system that is multilingual, intuitive, and built with love.
 
 Key features include:
 
-- A panic button that notifies relatives and local rapid response networks  
-- Automatic translation of emergency messages  
-- A multilingual Red Card feature for use in interactions with authorities  
-- Contact information for immigration support nearby using user’s zip code  
+- A panic button that notifies relatives and local rapid response networks   
+- A multilingual Red Card feature for use in interactions when having an encounter with ICE  
+- Contact information for immigration support nearby using the user’s zip code  
 
 ### Built With
 
@@ -19,11 +20,11 @@ Key features include:
 - Google Maps API  
 - Tailwind CSS  
 
-## 🚀 Getting Started
+## Getting Started
 
 To get a local copy up and running:
 
-### 📦 Prerequisites
+### Prerequisites
 
 Ensure the following tools are installed:
 
@@ -32,72 +33,71 @@ Ensure the following tools are installed:
 - Git  
 - npm or yarn  
 
-### 🛠 Installation
+### Installation
 
 Clone the repo:
 
-\`\`\`bash
+```bash
 git clone https://github.com/EmmanuelCobian/icebreakers.git
 cd icebreakers
-\`\`\`
+```
+
 
 Install dependencies:
 
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 Start iOS or Android build (Expo):
 
-\`\`\`bash
+```bash
 npx expo run:ios
 # or
 npx expo run:android
-\`\`\`
+```
 
-After completing the captcha, enter the code \`123456\` to finalize the login process.
+After completing the captcha, enter the code `123456` to finalize the login process.
 
-## 📱 Usage
+## Usage
 
 - Tap the **Panic Button** to notify your emergency contacts and local rapid response teams.  
-- Display a **Red Card** with multilingual legal support information.  
+- Display a **Red Card** with multilingual legal support information and instructions.  
 - Automatically **translate content** using the embedded Google Translate dropdown.  
 - Look up nearby immigration lawyers via the Google Maps API and scraped legal directories.  
 
 *For more examples, refer to the [Documentation](https://example.com)*
 
-## 🗺️ Roadmap
-
-- [ ] Voice command activation  
-- [ ] Offline Red Card functionality  
-- [ ] Integration with WhatsApp and Signal  
+## Roadmap
+  
+- [ ] Offline Red Card functionality    
 - [ ] Community resource map with verified reviews  
 - [ ] Dark mode & accessibility enhancements  
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions make the open source world go round. Feel free to fork this repo and propose enhancements.
 
 1. Fork the repo  
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)  
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)  
-4. Push to the branch (`git push origin feature/AmazingFeature`)  
+2. Create your feature branch (`git checkout -b feature/NewFeature`)  
+3. Commit your changes (`git commit -m 'Add some NewFeature'`)  
+4. Push to the branch (`git push origin feature/NewFeature`)  
 5. Open a Pull Request  
 
-## 🪪 License
+##  License
 
 Distributed under the Unlicense. See \`LICENSE.txt\` for more details.
 
-## 📫 Contact
+## Team
 
-Emmanuel Cobain Durate -
-Haibian -
-Victor Hernandez
-Alejandro Patino - 
-Auner Barrios Vasquez -   
+<p>Emmanuel Cobain Durate - (https://github.com/EmmanuelCobian)</p>
+<p>Haibian Yu - (https://github.com/haibn) </p>
+<p>Victor Hernandez - (https://github.com/hernandezv0110)</p>
+<p>Alejandro Patino - </p>
+<p>Auner Barrios Vasquez -(https://github.com/abarriosvasquez) </p>
 Project Link: [https://github.com/EmmanuelCobian/icebreakers](https://github.com/EmmanuelCobian/icebreakers)
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [React Native SMS](https://www.npmjs.com/package/react-native-sms)  
 - Google Maps API  
@@ -105,4 +105,3 @@ Project Link: [https://github.com/EmmanuelCobian/icebreakers](https://github.com
 - Expo  
 - Tailwind CSS  
 - Firebase Auth  
-- GitHub README Template by [othneildrew](https://github.com/othneildrew/Best-README-Template)
