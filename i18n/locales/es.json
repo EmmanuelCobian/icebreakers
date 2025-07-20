@@ -45,5 +45,9 @@
     "help": "AYUDA",
     "myRights": "Mis Derechos",
     "logout": "Cerrar sesión"
+  },
+  "location": {
+    "title-p1": "Habilitar",
+    "title-p2": "Ubicación"
   }
 }

@@ -65,6 +65,12 @@ export default function RootLayout() {
             animation: "none",
           }}
         />
+        <Stack.Screen
+          name="addContacts"
+          options={{
+            headerShown: true,
+          }}
+        />
       </Stack>
     </AuthProvider>
   );

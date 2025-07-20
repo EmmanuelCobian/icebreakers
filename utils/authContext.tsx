@@ -9,10 +9,12 @@ globalThis.RNFB_SILENCE_MODULAR_DEPRECATION_WARNINGS = true; // suppress firebas
 type AuthState = {
   isLoggedIn: boolean;
   isReady: boolean;
-  logIn: () => void;
+  logIn: (phone: string) => void;
   logOut: () => void;
-  confirmCode: (code: string) => void;
+  confirmCode: (code: string, phone: string) => void;
   user: FirebaseAuthTypes.User | null;
+  signUp: (name: string, phone: string, contacts: any) => void;
+  phone: String;
 };
 
 const authStorageKey = "auth-key";
@@ -20,21 +22,24 @@ const authStorageKey = "auth-key";
 export const AuthContext = createContext<AuthState>({
   isLoggedIn: false,
   isReady: false,
-  logIn: () => {},
+  logIn: (phone: string) => {},
   logOut: () => {},
-  confirmCode: (code: string) => {},
+  confirmCode: (code: string, phone: string) => {},
   user: null,
+  signUp: (name: string, phone: string, contacts: any) => {},
+  phone: "",
 });
 
 export function AuthProvider({ children }: PropsWithChildren) {
   const [isReady, setIsReady] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [phone, setPhone] = useState("");
   const router = useRouter();
   const pathname = usePathname();
-  console.log("auth", auth().currentUser);
-  useEffect(() => {
-    console.log("auth", auth().currentUser);
-  }, []);
+  // console.log("auth", auth().currentUser);
+  // useEffect(() => {
+  // console.log("auth", auth().currentUser);
+  // }, []);
 
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState<FirebaseAuthTypes.User | null>(null);
@@ -62,7 +67,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
     setConfirm(confirmation);
   }
 
-  async function confirmCode(code: string) {
+  async function confirmCode(code: string, phone: string) {
     try {
       if (!confirm) {
         console.log(
@@ -72,14 +77,18 @@ export function AuthProvider({ children }: PropsWithChildren) {
       }
       await confirm.confirm(code);
       setIsLoggedIn(true);
-      await storeAuthState({ isLoggedIn: true });
+      setPhone(phone);
+      await storeAuthState({ isLoggedIn: true, phone: phone });
       router.replace("/(protected)/main");
     } catch (error) {
       console.log("Invalid code.", error);
     }
   }
 
-  const storeAuthState = async (newState: { isLoggedIn: boolean }) => {
+  const storeAuthState = async (newState: {
+    isLoggedIn: boolean;
+    phone: string;
+  }) => {
     try {
       const jsonValue = JSON.stringify(newState);
       await AsyncStorage.setItem(authStorageKey, jsonValue);
@@ -88,10 +97,48 @@ export function AuthProvider({ children }: PropsWithChildren) {
     }
   };
 
-  const logIn = async () => {
+  const signUp = async (name: String, phone: String, contacts: any) => {
+    try {
+      const response = await fetch("http://localhost:3000/api/users/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          phone: phone,
+          name: name,
+          emergencyContacts: contacts,
+        }),
+      });
+      const text = await response.text();
+      try {
+        const data = JSON.parse(text);
+        await newLogIn(data.phone);
+      } catch (e) {
+        console.log("Error parsing JSON", e);
+      }
+    } catch (error) {
+      console.log("Error signing up with phone number:", error);
+    }
+  };
+
+  const newLogIn = async (phone: string) => {
     try {
       setIsLoggedIn(true);
-      await storeAuthState({ isLoggedIn: true });
+      await storeAuthState({ isLoggedIn: true, phone: phone });
+      router.replace("/(protected)/location");
+      // await signInWithPhoneNumber("+1 555-123-4567");
+      // router.push("/verify-code");
+    } catch (error) {
+      console.log("Error signing in with phone number:", error);
+    }
+  };
+
+  const logIn = async (phone: string) => {
+    try {
+      setIsLoggedIn(true);
+      await storeAuthState({ isLoggedIn: true, phone: phone });
       router.replace("/(protected)/main");
       // await signInWithPhoneNumber("+1 555-123-4567");
       // router.push("/verify-code");
@@ -104,7 +151,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
     console.log("Hi");
     auth().signOut();
     setIsLoggedIn(false);
-    storeAuthState({ isLoggedIn: false });
+    storeAuthState({ isLoggedIn: false, phone: "" });
     router.replace("/welcome");
   };
 
@@ -117,6 +164,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
         if (value !== null) {
           const auth = JSON.parse(value);
           setIsLoggedIn(auth.isLoggedIn);
+          setPhone(auth.phone);
         }
       } catch (error) {
         console.log("Error fetching from storage", error);
@@ -141,6 +189,8 @@ export function AuthProvider({ children }: PropsWithChildren) {
         logOut,
         confirmCode,
         user,
+        signUp,
+        phone,
       }}
     >
       {children}

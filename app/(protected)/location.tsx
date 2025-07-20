@@ -6,11 +6,13 @@ import {
   LanguageSelector,
   LanguageOption,
 } from "@/components/LanguageSelector";
+import { useTranslation } from "react-i18next";
 
 export default function EnableLocationScreen() {
   const [locationEnabled, setLocationEnabled] = useState(false);
   const [language, setLanguage] = useState<LanguageOption>("English");
   const router = useRouter();
+  const { t } = useTranslation();
 
   const toggleLocation = () => {
     setLocationEnabled((prev) => !prev);
@@ -34,7 +36,11 @@ export default function EnableLocationScreen() {
 
       {/* Main content */}
       <View className="items-start justify-center flex-1 gap-6">
-        <Text className="text-6xl font-bold">Enable{"\n"}Location</Text>
+        <Text className="text-6xl font-bold">
+          {t("location.title-p1")}
+          {"\n"}
+          {t("location.title-p2")}
+        </Text>
 
         {/* Toggle */}
         <View className="flex-row items-center bg-white p-1 rounded-xl shadow-md">

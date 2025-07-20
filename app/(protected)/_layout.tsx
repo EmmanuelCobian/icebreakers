@@ -20,12 +20,6 @@ export default function ProtectedLayout() {
   return (
     <Stack>
       <Stack.Screen
-        name="addContacts"
-        options={{
-          headerShown: true,
-        }}
-      />
-      <Stack.Screen
         name="main"
         options={{
           headerShown: true,

@@ -1,13 +1,27 @@
 import React, { useState } from "react";
-import { View, Text, Image, SafeAreaView, Dimensions, TextInput, Pressable, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  SafeAreaView,
+  Dimensions,
+  TextInput,
+  Pressable,
+  ScrollView,
+} from "react-native";
 import { useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
+import { useContext } from "react";
+import { AuthContext } from "@/utils/authContext";
+import { useLocalSearchParams } from "expo-router";
 
 const { height } = Dimensions.get("window");
 
 export default function addContacts() {
   const router = useRouter();
   const { t } = useTranslation();
+  const authContext = useContext(AuthContext);
+  const { name, phone } = useLocalSearchParams();
 
   const [contacts, setContacts] = useState([
     { phone: "", name: "", relationship: "" },
@@ -41,20 +55,22 @@ export default function addContacts() {
       {/* Logo in top-left */}
       <View className="absolute z-10 m-5">
         <Image
-          source={require("../../assets/images/ice-breakers-logo.png")}
+          source={require("../assets/images/ice-breakers-logo.png")}
           className="w-[50px] h-[50px]"
           resizeMode="contain"
         />
       </View>
 
       {/* Header */}
-      <ScrollView contentContainerStyle={{ flexGrow: 1 , justifyContent: 'center'}}>
+      <ScrollView
+        contentContainerStyle={{ flexGrow: 1, justifyContent: "center" }}
+      >
         <View className="items-start justify-center px-6 pt-[80px]">
-            <Text className="font-bold text-[50px] leading-none">Emergency</Text>
-            <Text className="font-bold text-[50px] leading-none">Contacts</Text>
+          <Text className="font-bold text-[50px] leading-none">Emergency</Text>
+          <Text className="font-bold text-[50px] leading-none">Contacts</Text>
         </View>
 
-      {/* Contact Form */}
+        {/* Contact Form */}
         <View className="px-6 mt-8 space-y-4">
           <TextInput
             placeholder="Phone Number"
@@ -80,8 +96,7 @@ export default function addContacts() {
 
           {/* Add another contact */}
           <Pressable onPress={addNewContact} className="mt-4 items-end w-full">
-            <Text className="underline text-base" 
-            style={{ color: "#315E26" }}>
+            <Text className="underline text-base" style={{ color: "#315E26" }}>
               + Add another contact
             </Text>
           </Pressable>
@@ -91,7 +106,9 @@ export default function addContacts() {
         {contacts.length > 1 && (
           <View className="flex-row justify-between items-center px-10 mt-6">
             <Pressable onPress={goToPrev} disabled={currentIndex === 0}>
-              <Text className={`text-3xl ${currentIndex === 0 ? "text-gray-300" : "text-black"}`}>
+              <Text
+                className={`text-3xl ${currentIndex === 0 ? "text-gray-300" : "text-black"}`}
+              >
                 ←
               </Text>
             </Pressable>
@@ -116,9 +133,9 @@ export default function addContacts() {
 
       {/* Bottom-right arrow to next screen */}
       <View className="w-full flex-row justify-end pr-4 mt-[10px]">
-        <Pressable onPress={() => router.push("/(protected)/location")}>
+        <Pressable onPress={() => authContext.signUp(name, phone, contacts)}>
           <Image
-            source={require("../../assets/images/arrowRight.png")}
+            source={require("../assets/images/arrowRight.png")}
             className="w-[70px] h-[70px]"
             resizeMode="cover"
           />

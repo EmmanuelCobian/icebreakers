@@ -10,6 +10,7 @@ import {
 } from "@/components/LanguageSelector";
 import { useTranslation } from "react-i18next";
 import i18n from "@/i18n";
+import { useNavigation } from "@react-navigation/native";
 
 export default function SignupScreen() {
   const router = useRouter();
@@ -19,6 +20,7 @@ export default function SignupScreen() {
   const [name, setName] = useState("");
   const [language, setLanguage] = useState<LanguageOption>("English");
   const [dropdownVisible, setDropdownVisible] = useState(false);
+  const navigation = useNavigation();
 
   const handleLanguageChange = (lang: LanguageOption) => {
     setLanguage(lang);
@@ -65,7 +67,12 @@ export default function SignupScreen() {
       {/* Login button */}
       <Button
         title={t("signup.button")}
-        onPress={authContext.logIn}
+        onPress={() =>
+          router.push({
+            pathname: "/addContacts",
+            params: { name: name, phone: phone },
+          })
+        }
         className="bg-green-800 rounded-lg py-3 items-center mt-5"
       />
     </View>

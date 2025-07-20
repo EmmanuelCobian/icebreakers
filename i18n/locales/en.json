@@ -45,5 +45,9 @@
     "help": "HELP",
     "myRights": "My Rights",
     "logout": "Logout"
+  },
+  "location": {
+    "title-p1": "Enable",
+    "title-p2": "Location"
   }
 }
