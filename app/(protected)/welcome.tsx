@@ -33,7 +33,7 @@ export default function Welcome() {
       {/* <LanguageSelector language={language} onChange={handleLanguageChange} /> */}
 
       {/* Bottom text */}
-      <View className="flex-1 items-center justify-center px-6">
+      <View className="flex-1 items-center justify-center px-6 mt-8">
         <Text className="text-center font-bold text-[60px] leading-none">
           {t("welcome.title-p1")}
         </Text>
@@ -47,7 +47,7 @@ export default function Welcome() {
           {t("welcome.description")}
         </Text>
 
-        <View className="w-full flex-row justify-end pr-4 mt-[10px]">
+        <View className="w-full flex-row justify-end pr-4">
           <Pressable onPress={() => router.push("/(protected)/introMessage")}>
             <Image
               source={require("../../assets/images/arrowRight.png")}
