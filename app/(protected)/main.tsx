@@ -28,7 +28,7 @@ export default function EmergencyScreen() {
   const handleSendEmergencySMS = async () => {
     try {
       const response = await fetch(
-        `http://10.0.0.42:3000/api/users/${authContext.phone}`,
+        `http://localhost:3000/api/users/${authContext.phone}`,
         {
           method: "GET",
           headers: {

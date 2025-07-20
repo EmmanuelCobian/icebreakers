@@ -98,7 +98,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
 
   const signUp = async (name: String, phone: String, contacts: any) => {
     try {
-      const response = await fetch("http://10.0.0.42:3000/api/users/register", {
+      const response = await fetch("http://localhost:3000/api/users/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
