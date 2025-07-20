@@ -2,8 +2,8 @@ import { View, Text, Image, SafeAreaView, Dimensions } from "react-native";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import { TutorialBox } from "@/components/TutorialBox";
 import { useTranslation } from "react-i18next";
-import { Pressable } from "react-native";
 import { useRouter } from "expo-router";
+import { Pressable } from "react-native";
 
 const { height } = Dimensions.get("window");
 
@@ -57,10 +57,10 @@ export default function introMessage() {
         <TutorialBox text={t("tutorial.description-4")} />
 
         <View className="w-full flex-row justify-end pr-4 mt-[10px]">
-          <Pressable onPress={() => router.push("/(protected)/location")}>
+          <Pressable onPress={() => router.push("/(protected)/addContacts")}>
             <Image
               source={require("../../assets/images/arrowRight.png")}
-              className="w-[70px] h-[70px]"
+              className="w-[60px] h-[70px]"
               resizeMode="cover"
             />
           </Pressable>
