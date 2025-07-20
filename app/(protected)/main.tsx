@@ -19,6 +19,7 @@ export default function EmergencyScreen() {
 
   const [language, setLanguage] = useState<LanguageOption>("English");
   const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [showRightsCard, setShowRightsCard] = useState(false);
 
   const handleLanguageChange = (lang: LanguageOption) => {
     setLanguage(lang);
@@ -107,7 +108,7 @@ export default function EmergencyScreen() {
         {/* My Rights Button - Taller */}
         <TouchableOpacity
           className="bg-orange-500 rounded-2xl px-10 py-12 shadow-md w-4/5 items-center"
-          //onPress={() => router.push("/rights")}
+          onPress={() => setShowRightsCard(true)}
         >
           <Text className="text-white text-4xl font-bold tracking-wide">
             {t("main.myRights")}
@@ -123,7 +124,40 @@ export default function EmergencyScreen() {
             {t("main.logout")}
           </Text>
         </TouchableOpacity>
+
       </View>
+
+      {/* Rights Overlay Card */}
+      {showRightsCard && (
+      <View className="absolute inset-0 z-50 items-center justify-center bg-black/20 px-4">
+        <View className="flex bg-red-600 rounded-2xl p-6 w-full max-w-lg">
+          <Text className="text-white text-base mb-4 font-semibold">
+            {t("main.right-1")}
+          </Text>
+          <Text className="text-white text-base mb-4 font-semibold">
+            {t("main.right-2")}
+          </Text>
+          <Text className="text-white text-base mb-4 font-semibold">
+            {t("main.right-3")}
+          </Text>
+          <Text className="text-white text-base mb-4 font-semibold">
+            {t("main.right-4")}
+          </Text>
+          <Text className="text-white text-base mb-4 font-semibold">
+            {t("main.right-5")}
+          </Text>
+
+          {/* Close Button */}
+          <TouchableOpacity
+            className="absolute bottom-4 right-4"
+            onPress={() => setShowRightsCard(false)}
+          >
+            <Text className="text-white text-lg underline font-bold">{t("main.go-back")}</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    )}
+
     </View>
   );
 }

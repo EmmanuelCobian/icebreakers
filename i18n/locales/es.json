@@ -44,7 +44,13 @@
   "main": {
     "help": "AYUDA",
     "myRights": "Mis Derechos",
-    "logout": "Cerrar sesión"
+    "logout": "Cerrar sesión",
+    "right-1": "No deseo hablar con usted. Estoy ejerciendo mi derecho a guardar silencio, basado en la Quinta Enmienda de la Constitución de los Estados Unidos, que me protege de ser obligado a incriminarme.",
+    "right-2": "No le doy permiso para entrar a mi hogar, con base en mi derecho de la Cuarta Enmienda, que me protege contra registros irrazonables y exige una orden judicial válida firmada por un juez.",
+    "right-3": "No doy mi consentimiento para que se registren mis pertenencias, mi hogar ni mi persona. Esto también se basa en mi derecho de la Cuarta Enmienda, que establece que no puedo ser registrado sin una orden judicial o justificación legal.",
+    "right-4": "Quiero hablar con un abogado antes de responder cualquier pregunta. Este es mi derecho bajo la Sexta Enmienda, que me garantiza acceso a representación legal si estoy siendo interrogado o detenido.",
+    "right-5": "Elijo ejercer mis derechos constitucionales.",
+    "go-back": "Regresar" 
   },
   "location": {
     "title-p1": "Habilitar",

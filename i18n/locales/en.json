@@ -44,7 +44,13 @@
   "main": {
     "help": "HELP",
     "myRights": "My Rights",
-    "logout": "Logout"
+    "logout": "Logout",
+    "right-1": "I do not wish to speak with you. I am exercising my right to remain silent, based on my Fifth Amendment right under the U.S. Constitution, which protects me from being forced to incriminate myself.",
+    "right-2": "I do not give you permission to enter my home, based on my Fourth Amendment right, which protects me against unreasonable searches and requires a valid warrant signed by a judge.",
+    "right-3": "I do not consent to a search of my belongings, my home, or my person. This is also based on my Fourth Amendment right, which states that I cannot be searched without a warrant or legal justification.",
+    "right-4": "I want to speak to a lawyer before answering any questions. This is my Sixth Amendment right, which guarantees me access to legal counsel if I am being questioned or detained.",
+    "right-5": "I choose to exercise my constitutional rights",
+    "go-back": "Go back"
   },
   "location": {
     "title-p1": "Enable",
