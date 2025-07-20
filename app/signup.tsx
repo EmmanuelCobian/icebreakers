@@ -60,7 +60,9 @@ export default function SignupScreen() {
         placeholder={t("signup.placeholder")}
         keyboardType="phone-pad"
         value={phone}
-        onChangeText={(text) => setPhone(text.replace(/\D/g, '').slice(0, 12))}
+        onChangeText={(text) =>
+          setPhone(text.replace(/[^0-9+\-()]/g, '').slice(0, 12))
+        }
         className="bg-white border border-gray-300 rounded-lg px-4 py-3 mb-3 shadow-sm"
       />
 
