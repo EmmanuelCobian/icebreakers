@@ -63,7 +63,7 @@ export default function Welcome() {
         <View className="w-full flex-row justify-end pr-4 mt-[10px]">
           <View className="absolute left-10 top-8">
             <Pressable onPress={() => router.push("/login")}>
-              <Text className="text-green-800">Skip to Login</Text>
+              <Text className="text-green-800">{t("welcome.skip")}</Text>
             </Pressable>
           </View>
           <Pressable onPress={() => router.push("/introMessage")}>

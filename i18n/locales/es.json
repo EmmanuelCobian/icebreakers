@@ -16,7 +16,8 @@
     "title-p1": "Bienvenido a",
     "title-p2": "ICE Breakers",
     "subtitle": "Tu compañero de emergencia confiable",
-    "description": "Con un solo toque, conéctate con ayuda, alerta a tus seres queridos y protege tus derechos — dondequiera que estés."
+    "description": "Con un solo toque, conéctate con ayuda, alerta a tus seres queridos y protege tus derechos — dondequiera que estés.",
+    "skip": "Saltar al inicio de sesión"
   },
   "intro1": {
     "title-p1": "ICE Breakers fue creado por",
@@ -50,7 +51,7 @@
     "right-3": "No doy mi consentimiento para que se registren mis pertenencias, mi hogar ni mi persona. Esto también se basa en mi derecho de la Cuarta Enmienda, que establece que no puedo ser registrado sin una orden judicial o justificación legal.",
     "right-4": "Quiero hablar con un abogado antes de responder cualquier pregunta. Este es mi derecho bajo la Sexta Enmienda, que me garantiza acceso a representación legal si estoy siendo interrogado o detenido.",
     "right-5": "Elijo ejercer mis derechos constitucionales.",
-    "go-back": "Regresar" 
+    "go-back": "Regresar"
   },
   "location": {
     "title-p1": "Habilitar",
@@ -62,8 +63,8 @@
     "phone": "Numero de Teléfono",
     "name": "Nombre (opcional)",
     "relationship": "Relación (opcional)",
-    "add-contact" : "+ Agregar otro contacto",
-    "contact" : "Contacto",
-    "of" : "de"
+    "add-contact": "+ Agregar otro contacto",
+    "contact": "Contacto",
+    "of": "de"
   }
 }
